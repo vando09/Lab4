@@ -1,0 +1,51 @@
+<div class="card">
+        <div class='card-header'>
+            {{res.resName}}
+        </div>
+        <div class='card-body'>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <div class='row'>
+                        <div class='col-md-3'>Name:</div>
+                        <div class='col-md-6'>{{res.productName}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Code:</div>
+                        <div class='col-md-6'>{{res.productCode | lowercase}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Description:</div>
+                        <div class='col-md-6'>{{res.description}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Availability:</div>
+                        <div class='col-md-6'>{{res.releaseDate}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Price:</div>
+                        <div class='col-md-6'>{{res.price|currency:'USD':true}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>5 Star Rating:</div>
+                        <div class='col-md-6'id="crop" [style.width.px]="res.starRating*75/5" title="rating"><div style="width: 90px">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-6'>
+                    <img src="{{res.imageUrl}}" alt="{{res.resName}}" width="75" height="75" >
+                </div>
+            </div>
+        </div>
+        <div class='card-footer'>
+            <a href="/product" class='btn btn-default' (click)='onBack()' style='width:100px'>
+                <i class='fa fa-arrow-left'></i> Back
+                </a>
+        </div>
+    </div>
+   
