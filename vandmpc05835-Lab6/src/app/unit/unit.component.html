@@ -1,0 +1,46 @@
+<div class="connector">
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Created_at</th>
+                    <th scope="col">Updated_at</th>
+                    <th scope="col">#</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let unit of listUnit; index as i">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{unit.name}}</td>
+                    <td>{{unit.address}}</td>
+                    <td>{{unit.description}}</td>
+                    <td>{{unit.created_at}}</td>
+                    <td>{{unit.updated_at}}</td>
+                    <td><button class="btn btn-danger" (click)="onDelete(unit.id)"> Xóa</button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+<!-- <div class="col-3">
+  <h3>Thêm</h3>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" placeholder="name....."[(ngModel)]="unit.name" name="name">
+    <label for="floatingInput">Name</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" placeholder="address....."[(ngModel)]="unit.address" name="address">
+    <label for="floatingInput">Address</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" placeholder="Description....."[(ngModel)]="unit.description" name="description">
+    <label for="floatingInput">Description</label>
+  </div>
+  <button type="button" class="btn btn-danger" (click)="addUnit()">Save</button>
+</div> -->
